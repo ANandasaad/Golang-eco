@@ -2,7 +2,15 @@ package controller
 
 import "github.com/gin-gonic/gin"
 
-func AddAddress() gin.HandlerFunc      {}
-func EditHomeAddress() gin.HandlerFunc {}
-func EditWorkAddress() gin.HandlerFunc {}
-func DeleteAddress() gin.HandlerFunc   {}
+func AddAddress() gin.HandlerFunc {
+	return func(ctx *gin.Context) {}
+}
+func EditHomeAddress() gin.HandlerFunc {
+	return func(ctx *gin.Context) {}
+}
+func EditWorkAddress() gin.HandlerFunc {
+	return func(ctx *gin.Context) {}
+}
+func DeleteAddress() gin.HandlerFunc {
+	return func(ctx *gin.Context) {}
+}

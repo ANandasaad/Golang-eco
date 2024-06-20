@@ -21,5 +21,5 @@ func ConnectDatabase() {
 	if err != nil {
 		log.Fatal("Failed to auto migrate models:", err)
 	}
-
+	DB = database
 }

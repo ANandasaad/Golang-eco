@@ -1,16 +1,21 @@
 package models
 
-import "time"
+import (
+	"time"
+
+	"gorm.io/gorm"
+)
 
 type User struct {
+	gorm.Model
 	ID             uint          `gorm:"primaryKey;autoIncrement" json:"id"`
-	FirstName      string        `json:"first_name" validate:"required,min=2,max=30"`
-	LastName       string        `json:"last_name" validate:"required,min=2,max=30"`
-	Email          string        `json:"email" validate:"required,email"`
-	Password       string        `json:"password" validate:"required,min=6"`
-	Phone          string        `json:"phone" validate:"required"`
-	Token          string        `json:"token"`
-	RefreshToken   string        `json:"refresh_token"`
+	FirstName      *string       `json:"first_name" validator:"required"`
+	LastName       *string       `json:"last_name" validator:"required"`
+	Email          *string       `json:"email" validate:"required"`
+	Password       *string       `json:"password" validate:"required,min=6"`
+	Phone          *string       `json:"phone" validate:"required"`
+	Token          *string       `json:"token"`
+	RefreshToken   *string       `json:"refresh_token"`
 	CreatedAt      time.Time     `json:"created_at"`
 	UpdatedAt      time.Time     `json:"updated_at"`
 	UserID         uint          `json:"user_id"`

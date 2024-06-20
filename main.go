@@ -2,6 +2,7 @@ package main
 
 import (
 	"golang-eco/database"
+	"golang-eco/routes"
 	"os"
 
 	"github.com/gin-gonic/gin"
@@ -16,7 +17,7 @@ func main() {
 	database.ConnectDatabase()
 	router := gin.New()
 	router.Use(gin.Logger())
-	// routes.UserRoutes(router)
+	routes.UserRoutes(router)
 	// router.Use(middleware.Authentication)
 	// router.GET("/addtocart", app.AddToCart())
 	// router.GET("/removeitem", app.RemoveItem())
